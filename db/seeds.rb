@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Item.create(name: "ポケモンいれかえ" , koka: "自分のバトルポケモンをベンチポケモンと入れ替える。")
+Item.create(name: "ポケモンキャッチャー" , koka: "コインを一回投げオモテなら、相手のベンチポケモンを１匹選び、バトルポケモンと入れ替える。")
