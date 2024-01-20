@@ -37,6 +37,7 @@ Skill.create!(
   symbol: ''
 )
 
+
 # 特性のデータ
 Tokusei.create!(
   name: 'はたらくまえば',
@@ -46,4 +47,15 @@ Tokusei.create!(
 Tokusei.create!(
   name: 'へっちゃらがお',
   koka: 'このポケモンは、ベンチにいるかぎり、ワザのダメージを受けない。'
+)
+
+# スタジアムのデータ
+Stajiamu.create!(
+  name: 'ビーチコート',
+  koka: 'おたがいのたねポケモン全員の逃げるためのエネルギーは、それぞれ１個ぶん少なくなる。'
+)
+
+Stajiamu.create!(
+  name: '頂きの雪道',
+  koka: 'おたがいの場の「ルールを持つポケモン」の特性は、すべてなくなる。'
 )
