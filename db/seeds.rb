@@ -36,3 +36,15 @@ Skill.create!(
   attack_point: 220,
   symbol: ''
 )
+
+# スタジアムのデータ
+Stajiamu.create!(
+  name: 'ビーチコート',
+  koka: 'おたがいのたねポケモン全員の逃げるためのエネルギーは、それぞれ１個ぶん少なくなる。'
+)
+
+Stajiamu.create!(
+  name: '頂きの雪道',
+  koka: 'おたがいの場の「ルールを持つポケモン」の特性は、すべてなくなる。'
+)
+

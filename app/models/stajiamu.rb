@@ -1,0 +1,2 @@
+class Stajiamu < ApplicationRecord
+end
