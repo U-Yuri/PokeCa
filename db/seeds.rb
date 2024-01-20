@@ -18,3 +18,18 @@ Support.create!(
   name: 'ミモザ',
   koka: '自分のトラッシュからポケモンを５枚まで選び、相手に見せて、山札に戻して切る。その後、山札を３枚引く。'
 )
+
+#技のデータ
+Skill.create!(
+  name: 'エナジークラッシュ',
+  koka: '相手のポケモン全員についているエネルギーの数×50ダメージ。',
+  attack_point: 50,
+  symbol: '×'
+)
+
+Skill.create!(
+  name: 'パルスランチャー',
+  koka: 'このポケモンにも30ダメージ。',
+  attack_point: 220,
+  symbol: ''
+)
