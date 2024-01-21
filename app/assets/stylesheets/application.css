@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+h1{
+  text-align: center;
+}
+
+.new_deck{
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  height: 350px;
+  width: 50%;
+  text-align: center;
+  background-color: #ffffcc;
+  border-radius: 30px;
+}
+
+.deck_create_btn{
+  height: 40px;
+  width: 100px;
+  border: none;
+  color: #324B4F;
+  font-size: large;
+  background-color: #67EDFF;
+  border-radius: 10px;
+}
+
