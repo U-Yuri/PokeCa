@@ -12,6 +12,12 @@
 
 
 ActiveRecord::Schema[7.0].define(version: 2024_01_20_081155) do
+  create_table "energies", force: :cascade do |t|
+     t.string "name"
+    t.text "koka"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -19,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_20_081155) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
+  
   create_table "pokemon_no_items", force: :cascade do |t|
     t.string "name"
     t.text "koka"
@@ -30,8 +36,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_20_081155) do
   create_table "skills", force: :cascade do |t|
     t.string "name"
     t.text "koka"
-    t.integer "attack_point"
-    t.string "symbol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_20_081155) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
+  
   create_table "supports", force: :cascade do |t|
     t.string "name"
     t.text "koka"
