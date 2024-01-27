@@ -14,7 +14,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_27_081249) do
   create_table "card_in_decks", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "card_in_deck_id"
+    t.integer "pokemon_no_items_id"
+    t.index ["pokemon_no_items_id"], name: "index_card_in_decks_on_pokemon_no_items_id"
   end
 
   create_table "decks", force: :cascade do |t|
@@ -74,4 +75,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_27_081249) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "card_in_decks", "pokemon_no_items", column: "pokemon_no_items_id"
 end
