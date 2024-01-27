@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_27_080207) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_27_081249) do
   create_table "card_in_decks", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "card_in_deck_id"
   end
 
   create_table "decks", force: :cascade do |t|
