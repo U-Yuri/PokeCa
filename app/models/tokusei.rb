@@ -1,0 +1,2 @@
+class Tokusei < ApplicationRecord
+end

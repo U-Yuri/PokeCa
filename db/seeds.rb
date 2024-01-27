@@ -37,6 +37,17 @@ Skill.create!(
   symbol: ''
 )
 
+# 特性のデータ
+Tokusei.create!(
+  name: 'はたらくまえば',
+  koka: '自分の番に1回使える。自分の手札が5枚になるように、山札を引く。'
+)
+
+Tokusei.create!(
+  name: 'へっちゃらがお',
+  koka: 'このポケモンは、ベンチにいるかぎり、ワザのダメージを受けない。'
+ )
+
 #エネルギーのデータ
 Energy.create!(
   name: 'いちげきエネルギー',
