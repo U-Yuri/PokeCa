@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_20_083937) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_28_014028) do
   create_table "decks", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -36,6 +36,22 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_20_083937) do
     t.text "koka"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pokemons", force: :cascade do |t|
+    t.string "sinka"
+    t.string "name"
+    t.string "special"
+    t.integer "hp"
+    t.string "zokusei"
+    t.integer "tokusei_id"
+    t.integer "skill1_id"
+    t.integer "skill2_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["skill1_id"], name: "index_pokemons_on_skill1_id"
+    t.index ["skill2_id"], name: "index_pokemons_on_skill2_id"
+    t.index ["tokusei_id"], name: "index_pokemons_on_tokusei_id"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -68,4 +84,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_20_083937) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "pokemons", "skills", column: "skill1_id"
+  add_foreign_key "pokemons", "skills", column: "skill2_id"
+  add_foreign_key "pokemons", "tokuseis"
 end

@@ -37,6 +37,22 @@ Skill.create!(
   symbol: ''
 )
 
+# 2023/01/28ポケモンのテーブル作成に伴い追加＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+Skill.create!(
+  name: 'ひっさつまえば',
+  koka: 'コインを1回投げウラなら、このワザは失敗。',
+  attack_point: 30,
+  symbol: ''
+)
+
+Skill.create!(
+  name: 'テールスマッシュ',
+  koka: 'このポケモンは、ベンチにいるかぎり、ワザのダメージを受けない。',
+  attack_point: 100,
+  symbol: ''
+)
+# ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
 # 特性のデータ
 Tokusei.create!(
   name: 'はたらくまえば',
@@ -46,7 +62,8 @@ Tokusei.create!(
 Tokusei.create!(
   name: 'へっちゃらがお',
   koka: 'このポケモンは、ベンチにいるかぎり、ワザのダメージを受けない。'
- )
+)
+
 
 #エネルギーのデータ
 Energy.create!(
@@ -73,4 +90,27 @@ Stajiamu.create!(
 # デッキ名のデータ
 Deck.create!(
   name: 'ゲンガーデッキ',
+)
+
+# ポケモンのデータ
+Pokemon.create!(
+  name: 'ビッパ',
+  sinka: 'たね',
+  zokusei: '無色',
+  hp: '60',
+  special: '',
+  tokusei_id: '2',
+  skill1_id: '3',
+  skill2_id: ''
+)
+
+Pokemon.create!(
+  name: 'ビーダル',
+  sinka: '1進化',
+  zokusei: '無色',
+  hp: '120',
+  special: '',
+  tokusei_id: '1',
+  skill1_id: '4',
+  skill2_id: ''
 )
