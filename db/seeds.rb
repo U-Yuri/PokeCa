@@ -121,7 +121,7 @@ CardInDeck.create!(
   pokemon_id: '1',
   item_id: nil,
   support_id: nil,
-  pokemon_no_item: nil,
+  pokemon_no_item_id: nil,
   stajiamu_id: nil,
   energy_id: nil
 )
@@ -131,7 +131,7 @@ CardInDeck.create!(
   pokemon_id: nil,
   item_id: '2',
   support_id: nil,
-  pokemon_no_item: nil,
+  pokemon_no_item_id: nil,
   stajiamu_id: nil,
   energy_id: nil
 )
@@ -141,7 +141,7 @@ CardInDeck.create!(
   pokemon_id: nil,
   item_id: nil,
   support_id: '1',
-  pokemon_no_item: nil,
+  pokemon_no_item_id: nil,
   stajiamu_id: nil,
   energy_id: nil
 )
@@ -151,7 +151,7 @@ CardInDeck.create!(
   pokemon_id: nil,
   item_id: nil,
   support_id: nil,
-  pokemon_no_item: '1',
+  pokemon_no_item_id: '1',
   stajiamu_id: nil,
   energy_id: nil
 )
@@ -161,7 +161,7 @@ CardInDeck.create!(
   pokemon_id: nil,
   item_id: nil,
   support_id: nil,
-  pokemon_no_item: nil,
+  pokemon_no_item_id: nil,
   stajiamu_id: '1',
   energy_id: nil
 )
@@ -171,7 +171,7 @@ CardInDeck.create!(
   pokemon_id: nil,
   item_id: nil,
   support_id: nil,
-  pokemon_no_item: nil,
+  pokemon_no_item_id: nil,
   stajiamu_id: nil,
   energy_id: '1'
 )
