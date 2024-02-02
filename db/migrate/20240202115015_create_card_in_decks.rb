@@ -1,7 +1,7 @@
 class CreateCardInDecks < ActiveRecord::Migration[7.0]
   def change
     create_table :card_in_decks do |t|
-      t.references :deck, foreign_key: true
+      t.references :deck, foreign_key: true, null: false
       t.references :pokemon, foreign_key: true
       t.references :item, foreign_key: true
       t.references :support, foreign_key: true
