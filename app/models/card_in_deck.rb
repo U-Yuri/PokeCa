@@ -1,4 +1,5 @@
 class CardInDeck < ApplicationRecord
+  belongs_to :deck
   belongs_to :pokemon
   belongs_to :item
   belongs_to :support
