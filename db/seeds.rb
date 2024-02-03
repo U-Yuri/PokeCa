@@ -42,14 +42,14 @@ Skill.create!(
   name: 'ひっさつまえば',
   koka: 'コインを1回投げウラなら、このワザは失敗。',
   attack_point: 30,
-  symbol: ''
+  symbol: nil
 )
 
 Skill.create!(
   name: 'テールスマッシュ',
   koka: 'このポケモンは、ベンチにいるかぎり、ワザのダメージを受けない。',
   attack_point: 100,
-  symbol: ''
+  symbol: nil
 )
 # ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
@@ -98,10 +98,10 @@ Pokemon.create!(
   sinka: 'たね',
   zokusei: '無色',
   hp: '60',
-  special: '',
+  special: nil,
   tokusei_id: '2',
   skill1_id: '3',
-  skill2_id: ''
+  skill2_id: nil
 )
 
 Pokemon.create!(
@@ -109,10 +109,10 @@ Pokemon.create!(
   sinka: '1進化',
   zokusei: '無色',
   hp: '120',
-  special: '',
+  special: nil,
   tokusei_id: '1',
   skill1_id: '4',
-  skill2_id: ''
+  skill2_id: nil
 )
 
 #デッキに入っているカードのデータ
