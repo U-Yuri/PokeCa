@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sinka: MyString
+  name: MyString
+  special: MyString
+  hp: 1
+  zokusei: MyString
+
+two:
+  sinka: MyString
+  name: MyString
+  special: MyString
+  hp: 1
+  zokusei: MyString
