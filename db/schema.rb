@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_28_014028) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_02_115015) do
+  create_table "card_in_decks", force: :cascade do |t|
+    t.integer "deck_id"
+    t.integer "pokemon_id"
+    t.integer "item_id"
+    t.integer "support_id"
+    t.integer "pokemon_no_item_id"
+    t.integer "stajiamu_id"
+    t.integer "energy_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deck_id"], name: "index_card_in_decks_on_deck_id"
+    t.index ["energy_id"], name: "index_card_in_decks_on_energy_id"
+    t.index ["item_id"], name: "index_card_in_decks_on_item_id"
+    t.index ["pokemon_id"], name: "index_card_in_decks_on_pokemon_id"
+    t.index ["pokemon_no_item_id"], name: "index_card_in_decks_on_pokemon_no_item_id"
+    t.index ["stajiamu_id"], name: "index_card_in_decks_on_stajiamu_id"
+    t.index ["support_id"], name: "index_card_in_decks_on_support_id"
+  end
+
   create_table "decks", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -84,6 +103,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_28_014028) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "card_in_decks", "decks"
+  add_foreign_key "card_in_decks", "energies"
+  add_foreign_key "card_in_decks", "items"
+  add_foreign_key "card_in_decks", "pokemon_no_items"
+  add_foreign_key "card_in_decks", "pokemons"
+  add_foreign_key "card_in_decks", "stajiamus"
+  add_foreign_key "card_in_decks", "supports"
   add_foreign_key "pokemons", "skills", column: "skill1_id"
   add_foreign_key "pokemons", "skills", column: "skill2_id"
   add_foreign_key "pokemons", "tokuseis"
