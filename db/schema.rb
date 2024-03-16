@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2024_02_24_041727) do
   create_table "card_in_decks", force: :cascade do |t|
-    t.integer "deck_id", null: false
+    t.integer "deck_id"
     t.integer "pokemon_id"
     t.integer "item_id"
     t.integer "support_id"
@@ -32,10 +32,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_24_041727) do
 
   create_table "decks", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_decks_on_user_id"
   end
 
   create_table "energies", force: :cascade do |t|
@@ -60,13 +58,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_24_041727) do
   end
 
   create_table "pokemons", force: :cascade do |t|
-    t.string "sinka", null: false
-    t.string "name", null: false
+    t.string "sinka"
+    t.string "name"
     t.string "special"
-    t.integer "hp", null: false
-    t.string "zokusei", null: false
+    t.integer "hp"
+    t.string "zokusei"
     t.integer "tokusei_id"
-    t.integer "skill1_id", null: false
+    t.integer "skill1_id"
     t.integer "skill2_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -125,7 +123,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_24_041727) do
   add_foreign_key "card_in_decks", "pokemons"
   add_foreign_key "card_in_decks", "stajiamus"
   add_foreign_key "card_in_decks", "supports"
-  add_foreign_key "decks", "users"
   add_foreign_key "pokemons", "skills", column: "skill1_id"
   add_foreign_key "pokemons", "skills", column: "skill2_id"
   add_foreign_key "pokemons", "tokuseis"
