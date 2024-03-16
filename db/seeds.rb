@@ -6,6 +6,14 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+User.create!(
+  email: 'test1@gmail.com',
+  # encrypted_password: '111111',
+  password: '111111',
+  name: 'yuri'
+)
+
+
 Item.create(name: "ポケモンいれかえ" , koka: "自分のバトルポケモンをベンチポケモンと入れ替える。")
 Item.create(name: "ポケモンキャッチャー" , koka: "コインを一回投げオモテなら、相手のベンチポケモンを１匹選び、バトルポケモンと入れ替える。")
 
@@ -90,6 +98,7 @@ Stajiamu.create!(
 # デッキ名のデータ
 Deck.create!(
   name: 'ゲンガーデッキ',
+  user_id: '1'
 )
 
 # ポケモンのデータ
@@ -175,3 +184,4 @@ CardInDeck.create!(
   stajiamu_id: nil,
   energy_id: '1'
 )
+
