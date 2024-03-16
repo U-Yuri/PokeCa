@@ -7,6 +7,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "pokeca#index"
 
-  # get "decks", to: "pokeca#index"
   # resources :pokeca, only: [:index]
 end
