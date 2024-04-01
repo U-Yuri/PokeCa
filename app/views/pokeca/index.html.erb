@@ -3,18 +3,23 @@
 
   <div class="new_deck">
     <h2>新規作成</h2>
-    <p>デッキ名<input class="deck_namae"></input></p>
+    
+    <%= form_with url: pokemon_path, method: @deck do |form| %>
+    <%= form.label :デッキ名 %> <%= form.text_field :name %>
     <p>スターターキットを使用する際は、スターターキットを選択してください。</br>
     ※初心者の人におすすめ</p>
 
-    <p>
+    <%# <p>
       <input type="radio" name="starter_kit">炎
       <input type="radio" name="starter_kit">水
       <input type="radio" name="starter_kit">雷
       <input type="radio" name="starter_kit">超能力
-    </p>
+    </p> %>
+    <%= form.submit "登録" %>
+    <%# <button class="deck_create_btn">作 成</button> %>
+    <% end %>
 
-    <button class="deck_create_btn">作 成</button>
   </div>
+  
 
 </body>
