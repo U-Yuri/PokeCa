@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "pokeca#index"
 
+  get "pokemon", to: "pokeca#index" 
+  post "pokemon", to: "pokeca#create"
+
   # resources :pokeca, only: [:index]
 end
