@@ -18,8 +18,13 @@
     <%= form.submit "登録" %>
     <%# <button class="deck_create_btn">作 成</button> %>
     <% end %>
-
   </div>
+
+  <ul>
+    <% @decks.each do |deck| %>
+      <li><%= deck.name %></li>
+    <% end %>
+  </ul>
   
 
 </body>

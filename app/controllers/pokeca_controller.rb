@@ -1,7 +1,9 @@
 class PokecaController < ApplicationController
   def index
+    @decks = Deck.where(user_id: current_user.id)
+    # @deck = Deck.new
     render "index"
-    @deck = Deck.new
+    
   end
 
   def create
@@ -10,7 +12,8 @@ class PokecaController < ApplicationController
       user_id: current_user.id
     )
 
-    p params
-    
+    redirect_to "/pokemon"
   end
 end
+
+
