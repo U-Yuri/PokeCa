@@ -14,6 +14,18 @@ class PokecaController < ApplicationController
 
     redirect_to "/pokemon"
   end
+
+  def deck
+    @deck = Deck.find(params[:id])
+    @energys = Energy.all
+    @items = Item.all
+    @PokemonNoItems = PokemonNoItem.all
+    @pokemons = Pokemon.all
+    @supports = Support.all
+    @stajiamus = Stajiamu.all
+    render "deck"
+  end
+
 end
 
 
