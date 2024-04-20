@@ -12,7 +12,7 @@ class PokecaController < ApplicationController
       user_id: current_user.id
     )
 
-    p params   
+    redirect_to "/pokemon"
   end
 end
 
