@@ -1,13 +1,12 @@
 <h1><%= @deck.name %></h1>
 
-<%= form_with model: @deck do |form| %>
-  <h2>ポケモン</h2>
-  <% @pokemons.each do |pokemon|%>
-	  <input type="checkbox" name="" value=""><%= pokemon.name %>
+
+<h2>ポケモン</h2>
+<% @pokemons.each do |pokemon|%>
+  <%= form_with method: :post, model: @deck do |form| %>
+    <input type="hidden" name="pokemon_id" value="<%= pokemon.id%>">
+    <%= pokemon.name %>
+    <%= form.submit "追加" %>
   <% end %>
-  <h2>エネルギー</h2>
-  <% @energys.each do |energy|%>
-    <input type="checkbox" name="" value=""><%= energy.name %>
-  <% end %>
-  <%= form.submit "登録" %>
 <% end %>
+
