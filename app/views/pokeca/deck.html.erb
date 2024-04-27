@@ -1,0 +1,12 @@
+<h1><%= @deck.name %></h1>
+
+
+<h2>ポケモン</h2>
+<% @pokemons.each do |pokemon|%>
+  <%= form_with method: :post, model: @deck do |form| %>
+    <input type="hidden" name="pokemon_id" value="<%= pokemon.id%>">
+    <%= pokemon.name %>
+    <%= form.submit "追加" %>
+  <% end %>
+<% end %>
+

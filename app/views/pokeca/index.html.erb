@@ -22,7 +22,9 @@
 
   <ul>
     <% @decks.each do |deck| %>
-      <li><%= deck.name %></li>
+      <%= link_to(deck) do %>
+        <li><%= deck.name %></li>
+      <% end %>
     <% end %>
   </ul>
   

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get "pokemon", to: "pokeca#index" 
   post "pokemon", to: "pokeca#create"
+  get "deck/:id", to: "pokeca#deck", as: 'deck'
+  post "deck/:id", to: "pokeca#CardInDeckCreate"
 
   # resources :pokeca, only: [:index]
 end
