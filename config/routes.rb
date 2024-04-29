@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post "pokemon", to: "pokeca#create"
   get "deck/:id", to: "pokeca#deck", as: 'deck'
   post "deck/:id", to: "pokeca#CardInDeckCreate"
+  delete "deck/:id", to: "pokeca#deck_delete"
 
   # resources :pokeca, only: [:index]
 end
