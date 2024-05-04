@@ -25,6 +25,8 @@ class PokecaController < ApplicationController
       stajiamu_id: params[:stajiamu_id],
       energy_id: params[:energy_id]
     )
+
+    redirect_to "/deck"
   end
 
   def deck
@@ -40,6 +42,12 @@ class PokecaController < ApplicationController
     @PokemonCardInDecks = @deck.card_in_decks.where.not(pokemon_id: nil)
 
     render "deck"
+  end
+
+  def CardInDeckDelete
+    @CardInDeckDelete = CardInDeck.find(params[:id])
+    @CardInDeckDelete.destroy
+    redirect_to "/deck"
   end
 
 end

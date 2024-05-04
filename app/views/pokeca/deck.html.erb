@@ -10,6 +10,15 @@
   <% end %>
 <% end %>
 
-<% @PokemonCardInDecks.each do |pokemon_card_in_deck| %>
-  <%= pokemon_card_in_deck.pokemon.name %>
-<% end %>
+<ul>
+  <% @PokemonCardInDecks.each do |pokemon_card_in_deck| %>
+    <%= form_with url:deck_cardindeck_path(pokemon_card_in_deck),method: :patch do |form| %>
+      <input type="hidden" value="<%= pokemon_card_in_deck.id %>">
+      <li>
+        <%= pokemon_card_in_deck.pokemon.name %>
+        <%= pokemon_card_in_deck.id %>
+      </li>
+      <%= form.button "削除", formmethod: :delete, data:{ confirm: "Are you sure?" } %>
+    <% end %>
+  <% end %>
+</ul>
