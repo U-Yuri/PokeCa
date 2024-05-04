@@ -12,7 +12,7 @@ class PokecaController < ApplicationController
       user_id: current_user.id
     )
 
-    redirect_to "/pokemon"
+    redirect_to pokemon_path
   end
 
   def CardInDeckCreate
@@ -36,6 +36,13 @@ class PokecaController < ApplicationController
     @supports = Support.all
     @stajiamus = Stajiamu.all
     render "deck"
+  end
+
+  def deck_delete
+    @deck = Deck.find(params[:id])
+    @deck.destroy
+
+    redirect_to pokemon_path
   end
 
 end

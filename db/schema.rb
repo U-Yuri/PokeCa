@@ -119,6 +119,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_24_041727) do
   end
 
   add_foreign_key "card_in_decks", "decks"
+  add_foreign_key "card_in_decks", "decks", on_delete: :cascade
   add_foreign_key "card_in_decks", "energies"
   add_foreign_key "card_in_decks", "items"
   add_foreign_key "card_in_decks", "pokemon_no_items"
