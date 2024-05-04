@@ -10,3 +10,6 @@
   <% end %>
 <% end %>
 
+<% @PokemonCardInDecks.each do |pokemon_card_in_deck| %>
+  <%= pokemon_card_in_deck.pokemon.name %>
+<% end %>

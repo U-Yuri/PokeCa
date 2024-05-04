@@ -32,9 +32,13 @@ class PokecaController < ApplicationController
     @energys = Energy.all
     @items = Item.all
     @PokemonNoItems = PokemonNoItem.all
+
     @pokemons = Pokemon.all
     @supports = Support.all
     @stajiamus = Stajiamu.all
+
+    @PokemonCardInDecks = @deck.card_in_decks.where.not(pokemon_id: nil)
+
     render "deck"
   end
 
