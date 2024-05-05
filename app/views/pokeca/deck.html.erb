@@ -10,15 +10,55 @@
   <% end %>
 <% end %>
 
-<ul>
+
+  <%# デッキに入ってるポケモンカードを表示 %>
   <% @PokemonCardInDecks.each do |pokemon_card_in_deck| %>
     <%= form_with url:deck_cardindeck_path(pokemon_card_in_deck),method: :patch do |form| %>
       <input type="hidden" value="<%= pokemon_card_in_deck.id %>">
-      <li>
         <%= pokemon_card_in_deck.pokemon.name %>
-        <%= pokemon_card_in_deck.id %>
-      </li>
       <%= form.button "削除", formmethod: :delete, data:{ confirm: "Are you sure?" } %>
     <% end %>
   <% end %>
-</ul>
+
+  <%# デッキに入っているアイテムを表示 %>
+  <% @ItemCardInDecks.each do |item_card_in_deck| %>
+    <%= form_with url:deck_cardindeck_path(item_card_in_deck),method: :patch do |form| %>
+      <input type="hidden" value="<%= item_card_in_deck.id %>">
+      <%= item_card_in_deck.item.name %>
+      <%= form.button "削除", formmethod: :delete, data:{ confirm: "Are you sure?" } %>
+    <% end %>  
+  <% end %>
+
+  <%# デッキに入っているサポートを表示 %>
+  <% @SupportCardInDecks.each do |support_card_in_deck| %>
+    <%= form_with url:deck_cardindeck_path(support_card_in_deck),method: :patch do |form| %>
+      <input type="hidden" value="<%= support_card_in_deck.id %>">
+      <%= support_card_in_deck.support.name %>
+      <%= form.button "削除", formmethod: :delete, data:{ confirm: "Are you sure?" } %>
+    <% end %>  
+  <% end %>
+
+  <%# デッキに入っているポケモンのアイテムを表示 %>
+  <% @PokemonNoItemCardInDecks.each do |pokemon_no_item_card_in_deck| %>
+    <%= form_with url:deck_cardindeck_path(pokemon_no_item_card_in_deck),method: :patch do |form| %>
+      <input type="hidden" value="<%= pokemon_no_item_card_in_deck.id %>">
+      <%= pokemon_no_item_card_in_deck.pokemon_no_item.name %>
+      <%= form.button "削除", formmethod: :delete, data:{ confirm: "Are you sure?" } %>
+    <% end %>  
+  <% end %>
+
+  <%# デッキに入っているスタジアムを表示 %>
+  <% @StajiamuCardInDecks.each do |stajiamu_card_in_deck| %>
+    <%= form_with url:deck_cardindeck_path(stajiamu_card_in_deck),method: :patch do |form| %>
+      <%= stajiamu_card_in_deck.stajiamu.name %>
+      <%= form.button "削除", formmethod: :delete, data:{ confirm: "Are you sure?" } %>
+    <% end %>  
+  <% end %>
+
+  <%# デッキに入っているエネルギーを表示 %>
+  <% @EnergyCardInDecks.each do |energy_card_in_deck| %>
+    <%= form_with url:deck_cardindeck_path(energy_card_in_deck),method: :patch do |form| %>
+    <%= energy_card_in_deck.energy.name %>
+    <%= form.button "削除", formmethod: :delete, data:{ confirm: "Are you sure?" } %>
+    <% end %>  
+  <% end %>

@@ -34,12 +34,18 @@ class PokecaController < ApplicationController
     @energys = Energy.all
     @items = Item.all
     @PokemonNoItems = PokemonNoItem.all
-
     @pokemons = Pokemon.all
     @supports = Support.all
     @stajiamus = Stajiamu.all
 
+    # card_in_decksからdeckに入っているカードをそれぞれのインスタンス変数に取得
     @PokemonCardInDecks = @deck.card_in_decks.where.not(pokemon_id: nil)
+    @ItemCardInDecks = @deck.card_in_decks.where.not(item_id: nil)
+    @SupportCardInDecks = @deck.card_in_decks.where.not(support_id: nil)
+    @PokemonNoItemCardInDecks = @deck.card_in_decks.where.not(pokemon_no_item_id: nil)
+    @StajiamuCardInDecks = @deck.card_in_decks.where.not(stajiamu_id: nil)
+    @EnergyCardInDecks = @deck.card_in_decks.where.not(energy_id: nil)
+
 
     render "deck"
   end
