@@ -38,7 +38,7 @@ class PokecaController < ApplicationController
     @supports = Support.all
     @stajiamus = Stajiamu.all
 
-    # card_in_decksからdeckに入っているカードをそれぞれのインスタンス変数に取得
+    # deckに入っているそれぞれの種類のカードをインスタンス変数に取得
     @PokemonCardInDecks = @deck.card_in_decks.where.not(pokemon_id: nil)
     @ItemCardInDecks = @deck.card_in_decks.where.not(item_id: nil)
     @SupportCardInDecks = @deck.card_in_decks.where.not(support_id: nil)
@@ -46,10 +46,10 @@ class PokecaController < ApplicationController
     @StajiamuCardInDecks = @deck.card_in_decks.where.not(stajiamu_id: nil)
     @EnergyCardInDecks = @deck.card_in_decks.where.not(energy_id: nil)
 
-
     render "deck"
   end
 
+  # デッキの中のカードを削除
   def CardInDeckDelete
     @CardInDeckDelete = CardInDeck.find(params[:id])
     @CardInDeckDelete.destroy

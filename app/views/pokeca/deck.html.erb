@@ -11,6 +11,8 @@
 <% end %>
 
 
+<h2><%= "#{@deck.name}のカード" %></h2>
+
   <%# デッキに入ってるポケモンカードを表示 %>
   <% @PokemonCardInDecks.each do |pokemon_card_in_deck| %>
     <%= form_with url:deck_cardindeck_path(pokemon_card_in_deck),method: :patch do |form| %>
