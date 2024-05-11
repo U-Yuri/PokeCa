@@ -33,9 +33,11 @@ class PokecaController < ApplicationController
     @items = Item.all
     @PokemonNoItems = PokemonNoItem.all
     @pokemons = Pokemon.all
-    @InputPokemon = @pokemons.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:pokemon_name]) + "%")
-    p @InputPokemon
     
+    if !params[:pokemon_name].nil?
+      @InputPokemon = @pokemons.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:pokemon_name]) + "%")
+    end
+
     @supports = Support.all
     @stajiamus = Stajiamu.all
     render "deck"
