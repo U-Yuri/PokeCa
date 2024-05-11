@@ -22,8 +22,11 @@
 
   <ul>
     <% @decks.each do |deck| %>
-      <%= link_to(deck) do %>
-        <li><%= deck.name %></li>
+      <%= form_with url: deck_path(deck), method: :patch do |form|%>
+        <%= link_to(deck) do %>
+          <li><%= deck.name %></li>
+        <% end %>
+        <%= form.button "削除", formmethod: :delete, data:{ confirm: "Are you sure?" } %>
       <% end %>
     <% end %>
   </ul>

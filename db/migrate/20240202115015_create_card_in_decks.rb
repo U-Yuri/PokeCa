@@ -11,5 +11,7 @@ class CreateCardInDecks < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+
+    add_foreign_key :card_in_decks, :decks, on_delete: :cascade
   end
 end
