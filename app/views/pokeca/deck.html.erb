@@ -1,5 +1,23 @@
 <h1><%= @deck.name %></h1>
 
+<%# <form action="/serch" method="get" accept-charset="UTF-8">
+  <label for="query">ポケモン:</label>
+  <input id="query" name="pokemon" type="text" />
+  <input name="commit" type="submit" value="検索" data-disable-with="Search" />
+</form> %>
+
+
+<%= form_with url: deck_path(@deck), method: :get do |form| %>
+  <input type="text" name="pokemon_name" value="ピカチュウ">
+  <%= form.submit "検索" %>
+<% end %>
+
+<% if !@InputPokemon.nil? %>
+  <% @InputPokemon.each do |pokemon| %>
+    <%= pokemon.name %>
+  <% end %>
+<% end %>
+
 
 <h2>ポケモン</h2>
 <% @pokemons.each do |pokemon|%>
