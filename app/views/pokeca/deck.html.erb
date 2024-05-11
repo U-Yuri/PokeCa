@@ -10,3 +10,56 @@
   <% end %>
 <% end %>
 
+
+<h2><%= "#{@deck.name}のカード" %></h2>
+
+<% @CardInDecks.each do |card_in_deck| %>
+  <% if !card_in_deck.pokemon.nil? %>
+    <%= form_with url:deck_cardindeck_path(card_in_deck),method: :patch do |form| %>
+      <input type="hidden" value="<%= card_in_deck.id %>">
+      <%= card_in_deck.pokemon.name %>
+      <%= form.button "削除", formmethod: :delete, data:{ confirm: "Are you sure?" } %>
+    <% end %>
+  <% end %>
+
+    <% if !card_in_deck.item.nil? %>
+      <%= form_with url:deck_cardindeck_path(card_in_deck),method: :patch do |form| %>
+      <input type="hidden" value="<%= card_in_deck.id %>">
+        <%= card_in_deck.item.name %>
+      <%= form.button "削除", formmethod: :delete, data:{ confirm: "Are you sure?" } %>
+      <% end %>
+    <% end %>
+
+    <% if !card_in_deck.support.nil? %>
+      <%= form_with url:deck_cardindeck_path(card_in_deck),method: :patch do |form| %>
+      <input type="hidden" value="<%= card_in_deck.id %>">
+        <%= card_in_deck.support.name %>
+      <%= form.button "削除", formmethod: :delete, data:{ confirm: "Are you sure?" } %>
+      <% end %>
+    <% end %>
+
+    <% if !card_in_deck.pokemon_no_item.nil? %>
+      <%= form_with url:deck_cardindeck_path(card_in_deck),method: :patch do |form| %>
+      <input type="hidden" value="<%= card_in_deck.id %>">
+        <%= card_in_deck.pokemon_no_item.name %>
+      <%= form.button "削除", formmethod: :delete, data:{ confirm: "Are you sure?" } %>
+      <% end %>
+    <% end %>
+
+    <% if !card_in_deck.stajiamu.nil? %>
+      <%= form_with url:deck_cardindeck_path(card_in_deck),method: :patch do |form| %>
+      <input type="hidden" value="<%= card_in_deck.id %>">
+        <%= card_in_deck.stajiamu.name %>
+      <%= form.button "削除", formmethod: :delete, data:{ confirm: "Are you sure?" } %>
+      <% end %>
+    <% end %>
+
+    <% if !card_in_deck.energy.nil? %>
+      <%= form_with url:deck_cardindeck_path(card_in_deck),method: :patch do |form| %>
+      <input type="hidden" value="<%= card_in_deck.id %>">
+        <%= card_in_deck.energy.name %>
+      <%= form.button "削除", formmethod: :delete, data:{ confirm: "Are you sure?" } %>
+      <% end %>
+    <% end %>
+
+  <% end %>

@@ -25,6 +25,8 @@ class PokecaController < ApplicationController
       stajiamu_id: params[:stajiamu_id],
       energy_id: params[:energy_id]
     )
+
+    redirect_to "/deck"
   end
 
   def deck
@@ -35,9 +37,20 @@ class PokecaController < ApplicationController
     @pokemons = Pokemon.all
     @supports = Support.all
     @stajiamus = Stajiamu.all
+
+    @CardInDecks = CardInDeck.where(deck_id: @deck.id)
+
     render "deck"
   end
 
+
+  # デッキの中のカードを削除
+  def CardInDeckDelete
+    @CardInDeckDelete = CardInDeck.find(params[:id])
+    @CardInDeckDelete.destroy
+    redirect_to "/deck"
+  end
+  
   def deck_delete
     @deck = Deck.find(params[:id])
     @deck.destroy
