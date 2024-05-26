@@ -31,13 +31,20 @@ class PokecaController < ApplicationController
 
   def deck
     @deck = Deck.find(params[:id])
-    @energys = Energy.all
+    @energies = Energy.all
     @items = Item.all
     @PokemonNoItems = PokemonNoItem.all
     @pokemons = Pokemon.all
+    @stajiamus = Stajiamu.all
+    @supports = Support.all
     
-    if !params[:pokemon_name].nil?
-      @InputPokemon = @pokemons.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:pokemon_name]) + "%")
+    if !params[:name].nil?
+      @InputPokemons = @pokemons.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:name]) + "%")
+      @InputEnergies = @energies.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:name]) + "%")
+      @InputItems = @items.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:name]) + "%")
+      @InputPokemonNoItems = @PokemonNoItems.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:name]) + "%")
+      @InputStajiamus = @stajiamus.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:name]) + "%")
+      @InputSupports = @supports.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:name]) + "%")
     end
 
     @supports = Support.all

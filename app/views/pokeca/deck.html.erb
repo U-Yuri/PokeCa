@@ -8,16 +8,45 @@
 
 
 <%= form_with url: deck_path(@deck), method: :get do |form| %>
-  <input type="text" name="pokemon_name" value="ピカチュウ">
+  <input type="text" name="name" value="ピカチュウ">
   <%= form.submit "検索" %>
 <% end %>
 
-<% if !@InputPokemon.nil? %>
-  <% @InputPokemon.each do |pokemon| %>
+<% if !@InputPokemons.nil? %>
+  <% @InputPokemons.each do |pokemon| %>
     <%= pokemon.name %>
   <% end %>
 <% end %>
 
+<% if !@InputEnergies.nil? %>
+  <% @InputEnergies.each do |energy| %>
+    <%= energy.name %>
+  <% end %>
+<% end %>
+
+<% if !@InputItems.nil? %>
+  <% @InputItems.each do |item| %>
+    <%= item.name %>
+  <% end %>
+<% end %>
+
+<% if !@InputPokemonNoItems.nil? %>
+  <% @InputPokemonNoItems.each do |pokemon_no_item| %>
+    <%= pokemon_no_item.name %>
+  <% end %>
+<% end %>
+
+<% if !@InputStajiamus.nil? %>
+  <% @InputStajiamus.each do |stajiamu| %>
+    <%= stajiamu.name %>
+  <% end %>
+<% end %>
+
+<% if !@InputSupports.nil? %>
+  <% @InputSupports.each do |support| %>
+    <%= support.name %>
+  <% end %>
+<% end %>
 
 <h2>ポケモン</h2>
 <% @pokemons.each do |pokemon|%>
