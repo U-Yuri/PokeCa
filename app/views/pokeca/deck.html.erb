@@ -12,9 +12,15 @@
   <%= form.submit "検索" %>
 <% end %>
 
-<% if !@InputPokemon.nil? %>
-  <% @InputPokemon.each do |pokemon| %>
+<% if !@InputPokemons.nil? %>
+  <% @InputPokemons.each do |pokemon| %>
     <%= pokemon.name %>
+  <% end %>
+<% end %>
+
+<% if !@InputEnergies.nil? %>
+  <% @InputEnergies.each do |energy| %>
+    <%= energy.name %>
   <% end %>
 <% end %>
 
