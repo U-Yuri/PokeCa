@@ -36,8 +36,8 @@ class PokecaController < ApplicationController
     @PokemonNoItems = PokemonNoItem.all
     @pokemons = Pokemon.all
     
-    if !params[:pokemon_name].nil?
-      @InputPokemon = @pokemons.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:pokemon_name]) + "%")
+    if !params[:name].nil?
+      @InputPokemon = @pokemons.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:name]) + "%")
     end
 
     @supports = Support.all
