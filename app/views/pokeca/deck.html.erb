@@ -24,6 +24,29 @@
   <% end %>
 <% end %>
 
+<% if !@InputItems.nil? %>
+  <% @InputItems.each do |item| %>
+    <%= item.name %>
+  <% end %>
+<% end %>
+
+<% if !@InputPokemonNoItems.nil? %>
+  <% @InputPokemonNoItems.each do |pokemon_no_item| %>
+    <%= pokemon_no_item.name %>
+  <% end %>
+<% end %>
+
+<% if !@InputStajiamus.nil? %>
+  <% @InputStajiamus.each do |stajiamu| %>
+    <%= stajiamu.name %>
+  <% end %>
+<% end %>
+
+<% if !@InputSupports.nil? %>
+  <% @InputSupports.each do |support| %>
+    <%= support.name %>
+  <% end %>
+<% end %>
 
 <h2>ポケモン</h2>
 <% @pokemons.each do |pokemon|%>
