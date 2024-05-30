@@ -8,7 +8,8 @@
 
 
 <%= form_with url: deck_path(@deck), method: :get do |form| %>
-  <input type="text" name="name" value="ピカチュウ">
+  <%# <input type="text" name="name" value="ピカチュウ"> %>
+  <input type="text" name="search_word" value="ピカチュウ">
   <%= form.submit "検索" %>
 <% end %>
 
