@@ -38,13 +38,25 @@ class PokecaController < ApplicationController
     @stajiamus = Stajiamu.all
     @supports = Support.all
     
-    if !params[:name].nil?
-      @InputPokemons = @pokemons.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:name]) + "%")
-      @InputEnergies = @energies.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:name]) + "%")
-      @InputItems = @items.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:name]) + "%")
-      @InputPokemonNoItems = @PokemonNoItems.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:name]) + "%")
-      @InputStajiamus = @stajiamus.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:name]) + "%")
-      @InputSupports = @supports.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:name]) + "%")
+
+    # if !params[:name].nil?
+    if !params[:search_word].nil?
+
+      @InputPokemons = Pokemon.joins('LEFT OUTER JOIN skills AS skill1 ON pokemons.skill1_id = skill1.id LEFT OUTER JOIN skills AS skill2 ON pokemons.skill2_id = skill2.id LEFT OUTER JOIN tokuseis ON pokemons.tokusei_id = tokuseis.id')
+      .where("pokemons.name like? or skill1.name like? or skill1.koka like? or skill2.name like? or skill2.koka like? or tokuseis.name like? or tokuseis.koka like?",
+      "%" + ActiveRecord::Base.sanitize_sql_like(params[:search_word]) + "%",
+      "%" + ActiveRecord::Base.sanitize_sql_like(params[:search_word]) + "%",
+      "%" + ActiveRecord::Base.sanitize_sql_like(params[:search_word]) + "%",
+      "%" + ActiveRecord::Base.sanitize_sql_like(params[:search_word]) + "%",
+      "%" + ActiveRecord::Base.sanitize_sql_like(params[:search_word]) + "%",
+      "%" + ActiveRecord::Base.sanitize_sql_like(params[:search_word]) + "%",
+      "%" + ActiveRecord::Base.sanitize_sql_like(params[:search_word]) + "%")
+
+      @InputEnergies = @energies.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:search_word]) + "%")
+      @InputItems = @items.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:search_word]) + "%")
+      @InputPokemonNoItems = @PokemonNoItems.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:search_word]) + "%")
+      @InputStajiamus = @stajiamus.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:search_word]) + "%")
+      @InputSupports = @supports.where("name like ?", "%" + ActiveRecord::Base.sanitize_sql_like(params[:search_word]) + "%")
     end
 
     @supports = Support.all
